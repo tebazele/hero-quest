@@ -5,21 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>⚔️ Hero's Quest! ⚔️</title>
-  <script src="Test/app.js"></script>
+  <script src="Test/main.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
     defer></script>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="assets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="bg-dark text-light">
 
   <header class="container-fluid">
     <div class="row">
-      <div class="col text-center text-light theme-font">
-        <h1 class="mb-0">⚔️ Hero's Quest! ⚔️</h3>
+      <div class="col text-center text-light ">
+        <h1 class="mb-0">⚔️ Hero's Quest! ⚔️</h1>
       </div>
     </div>
   </header>
@@ -27,41 +27,119 @@
 
   <main>
 
+    <!-- 🚩 THE START SCREEN -->
     <div class="screen" id="start-screen">
-      Start Screen
+      <div class="action-box text-center">
+        <button class="btn text-light" onclick="showMap()">Start Game</button>
+      </div>
     </div>
 
+    <!-- 🗺️ THE MAP SCREEN -->
     <div class="screen" id="map-screen">
-      MAP & Store
+
+      <div class="map py-3">
+        <p class="fs-4 text-dark text-center">
+          <b>
+            Where would you like to go?
+          </b>
+        </p>
+        <div class="locations d-flex justify-content-around">
+          <div class="action-box text-center show">
+            <button class="btn text-light" onclick="showStage1()">The Jungle Ruins</button>
+          </div>
+          <div class="action-box text-center show">
+            <button class="btn text-light" onclick="showStage2()">The Crystal Caves</button>
+          </div>
+          <div class="action-box text-center show">
+            <button class="btn text-light" onclick="showStage3()">The Dragons Den</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="store my-3 container">
+        <div class="action-box show">
+          <p class="fs-4 text-light text-center">
+            <b>
+              Gear up before you heading out...
+            </b>
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="screen" id="stage-1-screen">
-      STAGE 1
+    <!-- 🎮 THE STAGES -->
+    <div id="stages">
+
+      <!-- ⚔️ MY_HERO -->
+      <div class="hero-container">
+        <div id="hero-name">Hero</div>
+        <div id="hero-health">10</div>
+        <div id="hero-level">1</div>
+      </div>
+
+      <!-- Player Actions -->
+      <div id="player-actions" class="action-box">
+        <button class="btn" onclick="attackEnemy()">Attack</button>
+        <button class="btn" onclick="healPlayer()">Heal</button>
+      </div>
+
+
+      <!-- 🧌 THE ENEMY -->
+      <div class="enemy-container">
+        <div id="enemy-type">Owl</div>
+        <div id="enemy-health">100</div>
+      </div>
+
+      <div class="screen" id="stage-1-screen">
+        <div class="start-stage">
+          <div class="action-box show">
+            <button class="btn" onclick="startStage(1)">Start Stage</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="stage-2-screen">
+        <div class="start-stage">
+          <div class="action-box show">
+            <button class="btn" onclick="startStage(2)">Start Stage</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="stage-3-screen">
+        <div class="start-stage">
+          <div class="action-box show">
+            <button class="btn" onclick="startStage(3)">Start Stage</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-warning run-button" onclick="showMap()">Run</button>
+
     </div>
 
-    <div class="screen" id="stage-2-screen">
-      STAGE 2
-    </div>
-
-    <div class="screen" id="stage-3-screen">
-      STAGE 3
-    </div>
-
-    <div class="screen" id="victory-screen">
+    <!-- 🎉 THE VICTORY SCREEN -->
+    <div class="screen centered" id="victory-screen">
       Victory Screen
     </div>
 
-    <div class="screen" id="game-over-screen">
+    <!-- 😭 THE GAME OVER SCREEN -->
+    <div class="screen centered" id="game-over-screen">
       Game Over
     </div>
 
-
-    <!-- ⌨️ Your HTML Code Here -->
   </main>
 
 
 
-  <script src="app.js"></script>
+  <script src="app/player-manager.js"></script>
+  <script src="app/stage-1-config.js"></script>
+
+  <script src="app/screen-manager.js"></script>
+  <script src="app/stage-manager.js"></script>
+
+  <script src="app/utils/helpers.js"></script>
+
 </body>
 
 </html>

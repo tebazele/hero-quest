@@ -1,0 +1,138 @@
+body {
+  overflow: hidden;
+}
+
+header {
+  height: 75px;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+main .screen {
+  background-size: cover;
+  height: calc(100vh - 75px);
+  transition: all .15s linear;
+  opacity: 1;
+  position: relative;
+  left: 0;
+}
+
+main .screen:not(.show) {
+  height: 0;
+  left: -100vw;
+  opacity: 0;
+  transition-delay: .15s;
+}
+
+#start-screen {
+  background-image: url(start-screen.gif);
+  display: grid;
+  place-content: center;
+  z-index: 2;
+}
+
+#map-screen {
+  background-color: burlywood;
+  z-index: 2;
+}
+
+#stages {
+  position: relative;
+}
+
+.hero-container {
+  position: absolute;
+  bottom: 20vh;
+  left: 20vw;
+  z-index: 1;
+}
+
+.enemy-container {
+  position: absolute;
+  bottom: 20vh;
+  right: 20vw;
+  z-index: 1;
+}
+
+
+#stage-1-screen {
+  background-image: url(stage-1.gif);
+}
+
+#stage-2-screen {
+  background-image: url(stage-2.gif);
+}
+
+#stage-3-screen {
+  background-image: url(stage-3.gif);
+}
+
+#victory-screen {
+  background-image: url(victory-screen.gif);
+  z-index: 2;
+}
+
+#game-over-screen {
+  background-image: url(game-over.gif);
+  z-index: 2;
+}
+
+.action-box {
+  background: #030211f0;
+  padding: 0.35rem;
+  border: 4px double #dbd3c5ad;
+  border-radius: 10px;
+  color: whitesmoke;
+  filter: drop-shadow(2px 4px 6px black);
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+  transition-delay: 1.5s;
+}
+
+.action-box.show {
+  max-height: 800px;
+  opacity: 1;
+  min-width: 300px;
+  pointer-events: all;
+  transition-delay: 0;
+}
+
+.action-box .btn {
+  color: aliceblue;
+}
+
+
+.locations .action-box {
+  background-position: center;
+  background-blend-mode: difference;
+}
+
+.locations .action-box:first-child {
+  background-image: url(stage-1.gif);
+}
+
+.locations .action-box:nth-child(2) {
+  background-image: url(stage-2.gif);
+  background-position: 100px;
+}
+
+.locations .action-box:last-child {
+  background-image: url(stage-3.gif);
+}
+
+.start-stage {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.run-button{
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem
+}

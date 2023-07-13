@@ -6,15 +6,16 @@ let stage3Screen = document.getElementById('stage-3-screen')
 let victoryScreen = document.getElementById('victory-screen')
 let gameOverScreen = document.getElementById('game-over-screen')
 
-startScreen.classList.add('show')
-
 function hideActiveScreen() {
-  document.querySelector('.show').classList.remove('show')
+  document.querySelector('.screen.show')?.classList.remove('show')
 }
 
 function showStartScreen() {
   hideActiveScreen()
   startScreen.classList.add('show')
+  setTimeout(()=>{
+    startScreen.querySelector('.action-box').classList.add('show')
+  }, 1)
 }
 
 function showMap() {
@@ -47,3 +48,4 @@ function showGameOver() {
   gameOverScreen.classList.add('show')
 }
 
+showStartScreen()
