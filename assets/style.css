@@ -89,15 +89,15 @@ main .screen:not(.show) {
   opacity: 0;
   max-height: 0;
   pointer-events: none;
-  transition-delay: 1.5s;
+  transition-delay: 0;
 }
 
 .action-box.show {
+  transition-delay: 1.5s;
   max-height: 800px;
   opacity: 1;
   min-width: 300px;
   pointer-events: all;
-  transition-delay: 0;
 }
 
 .action-box .btn {
@@ -130,9 +130,10 @@ main .screen:not(.show) {
   text-align: center;
 }
 
-.run-button{
-  position: absolute;
+#player-actions {
+  position: fixed;
+  text-align: center;
+  left: 15vw;
+  bottom: 100px;
   z-index: 1;
-  right: 1rem;
-  top: 1rem
 }

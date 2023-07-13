@@ -13,7 +13,7 @@ function hideActiveScreen() {
 function showStartScreen() {
   hideActiveScreen()
   startScreen.classList.add('show')
-  setTimeout(()=>{
+  setTimeout(() => {
     startScreen.querySelector('.action-box').classList.add('show')
   }, 1)
 }
