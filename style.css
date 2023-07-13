@@ -1,0 +1,54 @@
+body {
+  overflow: hidden;
+}
+
+header {
+  height: 75px;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+main .screen {
+  background-size: cover;
+  height: calc(100vh - 75px);
+  transition: all .15s linear;
+  opacity: 1;
+  position: relative;
+  left: 0;
+}
+
+main .screen:not(.show) {
+  height: 0;
+  left: -100vw;
+  opacity: 0;
+  transition-delay: .15s;
+}
+
+#start-screen {
+  background-image: url(assets/start-screen.gif);
+}
+
+#map-screen {
+  background-image: url(assets/map-screen.gif);
+}
+
+#stage-1-screen {
+  background-image: url(assets/stage-1.gif);
+}
+
+#stage-2-screen {
+  background-image: url(assets/stage-2.gif);
+}
+
+#stage-3-screen {
+  background-image: url(assets/stage-3.gif);
+}
+
+#victory-screen {
+  background-image: url(assets/victory-screen.gif);
+}
+
+#game-over-screen {
+  background-image: url(assets/game-over.gif);
+}
