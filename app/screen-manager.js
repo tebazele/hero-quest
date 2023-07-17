@@ -1,10 +1,7 @@
 let startScreen = document.getElementById('start-screen')
 let mapScreen = document.getElementById('map-screen')
 let stage1Screen = document.getElementById('stage-1-screen')
-let stage2Screen = document.getElementById('stage-2-screen')
-let stage3Screen = document.getElementById('stage-3-screen')
-let victoryScreen = document.getElementById('victory-screen')
-let gameOverScreen = document.getElementById('game-over-screen')
+// TOOD create a variable for the other screens
 
 function hideActiveScreen() {
   document.querySelector('.screen.show')?.classList.remove('show')
@@ -24,28 +21,23 @@ function showMap() {
 }
 
 function showStage1() {
-  hideActiveScreen()
-  stage1Screen.classList.add('show')
+  // STUB
 }
 
 function showStage2() {
-  hideActiveScreen()
-  stage2Screen.classList.add('show')
+  // STUB
 }
 
 function showStage3() {
-  hideActiveScreen()
-  stage3Screen.classList.add('show')
+  // STUB
 }
 
 function showVictory() {
-  hideActiveScreen()
-  victoryScreen.classList.add('show')
+  // STUB
 }
 
 function showGameOver() {
-  hideActiveScreen()
-  gameOverScreen.classList.add('show')
+  // STUB
 }
 
 showStartScreen()

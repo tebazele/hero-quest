@@ -1,3 +1,4 @@
+// FEEL free to play with the numbers or add additional enemies
 const stage1Enemies = [{
   type: 'Centaur',
   health: 3,
