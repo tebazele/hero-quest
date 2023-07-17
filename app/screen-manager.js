@@ -1,7 +1,7 @@
 let startScreen = document.getElementById('start-screen')
 let mapScreen = document.getElementById('map-screen')
 let stage1Screen = document.getElementById('stage-1-screen')
-// TOOD create a variable for the other screens
+// TODO create a variable for each of the other screens
 
 function hideActiveScreen() {
   document.querySelector('.screen.show')?.classList.remove('show')
