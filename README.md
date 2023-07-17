@@ -61,8 +61,8 @@ document.getElementById('enemy-type').innerText = currentEnemy.type;
 
 * The `attackEnemy()` function:
 
-  + Call the enemyTurn() function. 
-  + Reduce the current enemy's health by the player's attack power (currentEnemy.health -= player.attackPower).
+  + Call the `enemyTurn()` function. 
+  + Reduce the current enemy's health by the player's attack power `(currentEnemy.health -= player.attackPower)`.
   + If the current enemy's health is less than or equal to 0, call the `rewardPlayer()` function, and then select a random enemy from the current stage using the `pickRandomEnemyFromCurrentStage()` function.
   + Update the player and enemy information on the screen by calling the `drawPlayer()` and `drawCurrentEnemy()` functions.
 
@@ -96,7 +96,5 @@ document.getElementById('enemy-type').innerText = currentEnemy.type;
   + If so, increase the player's attack power, deduct the required gold, display a message indicating the attack power increase, and update the player information on the screen by calling the `drawPlayer()` function.
   + If the player does not have enough gold, display a message using the `messageUser()` function.
   + Finally, call the drawPlayer() function at the end of the script to display the initial player information on the screen.
-
-
 
 Good luck building your game!
