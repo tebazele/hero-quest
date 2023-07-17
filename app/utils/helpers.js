@@ -4,7 +4,10 @@ const playerActionsElem = document.getElementById('player-actions')
 
 playerActionsElem.addEventListener('click', () => {
   // @ts-ignore
-  hidePlayerActions(event.target?.innerText?.includes('Run'))
+  if (event.target.tagName == 'BUTTON') {
+    // @ts-ignore
+    hidePlayerActions(event.target?.innerText?.includes('Run'))
+  }
 })
 
 function startStage(number) {
@@ -13,8 +16,9 @@ function startStage(number) {
 }
 
 function activateCurrentStage() {
-  currentEnemy = pickRandomEnemyFromCurrentStage()
+  pickRandomEnemyFromCurrentStage()
   drawCurrentEnemy()
+  drawPlayer()
   showPlayerActions()
 }
 
@@ -29,12 +33,12 @@ function hidePlayerActions(hide) {
   }
 }
 
-document.querySelectorAll('.start-stage').forEach(b => {
+document.querySelectorAll('.start-stage button').forEach(b => {
   // @ts-ignore
-  b.onclick = () => {
+  b.addEventListener('click', () => {
     document.querySelector(`.enemy-container`).classList.remove('d-none')
     document.querySelector(`#stage-${currentStage}-screen .start-stage`)?.classList.add('d-none')
-  }
+  })
 })
 
 document.querySelector('#run-button').addEventListener('click', () => {
@@ -60,5 +64,19 @@ function pickRandomEnemyFromCurrentStage() {
 
   let i = Math.floor(Math.random() * stageEnemies.length)
   const enemy = { ...stageEnemies[i] }
-  return enemy
+  messageUser(`Enemy ${enemy.type} approaches`)
+  currentEnemy = enemy
+  document.querySelector('.enemy-container img#enemy-picture')?.setAttribute('src', 'assets/' + currentEnemy.type + '.gif')
+}
+
+
+function messageUser(message = '') {
+  const messageElem = document.getElementById("messagebar")
+
+  messageElem.innerText = message
+
+  messageElem.classList.add("show");
+
+  setTimeout(() => messageElem.classList.remove('show'), 3000);
+
 }

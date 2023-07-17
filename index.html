@@ -63,6 +63,16 @@
               Gear up before you heading out...
             </b>
           </p>
+          <div class="store-items">
+            <button class="btn" onclick="increaseAttack()">
+              <img src="assets/attack_up.png" alt="Attack Up" title="Increase Attack Power">
+              <div class="fs-2 text-center">10GP</d>
+            </button>
+            <button class="btn" onclick="buyPotion()">
+              <img src="assets/potion.png" alt="Buy Potion" title="Buy Potion">
+              <div class="fs-2 text-center">5GP</d>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -73,8 +83,12 @@
       <!-- ⚔️ MY_HERO -->
       <div class="hero-container">
         <div id="hero-name">NAME YOUR HERO</div>
-        <div id="hero-health"></div>
-        <div id="hero-level"></div>
+        <div class="d-flex align-items-center gap-3">
+          <div id="hero-health" title="Health"></div>
+          <div id="hero-attack" title="Attack Power"></div>
+          <div id="hero-potions" title="Potions"></div>
+        </div>
+        <div id="hero-gold"></div>
       </div>
 
       <!-- Player Actions -->
@@ -87,6 +101,7 @@
 
       <!-- 🧌 THE ENEMY -->
       <div class="enemy-container">
+        <img src="" alt="" id="enemy-picture">
         <div id="enemy-type"></div>
         <div id="enemy-health"></div>
       </div>
@@ -117,15 +132,14 @@
 
     </div>
 
+    <!-- 🔔 Show messages to the User -->
+    <div id="messagebar"></div>
+
     <!-- 🎉 THE VICTORY SCREEN -->
-    <div class="screen centered" id="victory-screen">
-      Victory Screen
-    </div>
+    <div class="screen centered" id="victory-screen"></div>
 
     <!-- 😭 THE GAME OVER SCREEN -->
-    <div class="screen centered" id="game-over-screen">
-      Game Over
-    </div>
+    <div class="screen centered" id="game-over-screen"></div>
 
   </main>
 

@@ -1,30 +1,30 @@
 const stage1Enemies = [{
-  type: 'Wasp',
+  type: 'Centaur',
   health: 3,
-  maxPointReward: 2,
+  gold: 3,
   maxAttackPower: 2
 }, {
-  type: 'Beetle',
+  type: 'Golem',
   health: 1,
   maxAttackPower: 1,
-  maxPointReward: 0,
+  gold: 1,
 }]
 
 const stage2Enemies = [{
-  type: 'Bat',
+  type: 'Ice-Golem',
   health: 12,
   maxAttackPower: 6,
-  maxPointReward: 5,
+  gold: 6,
 }, {
-  type: 'Crystal Guardian',
+  type: 'Wolf',
   health: 80,
   maxAttackPower: 25,
-  maxPointReward: 100,
+  gold: 100,
 }]
 
 const stage3Enemies = [{
   type: 'Dragon',
   health: 300,
-  maxPointReward: 10000,
+  gold: 10000,
   maxAttackPower: 120
 }]
