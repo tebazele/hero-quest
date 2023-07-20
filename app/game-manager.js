@@ -1,3 +1,4 @@
+
 const player = {
   currentHealth: 10,
   attackPower: 1,
@@ -16,13 +17,15 @@ function attackEnemy() {
 function drawPlayer() {
   document.getElementById('hero-health').innerText = '💖 ' + player.currentHealth
   // TODO finish the rest of the player attributes 
-  document.getElementById('hero-gold').innerText = '🪙 '
-  document.getElementById('hero-potions').innerText = '🧪 '
-  document.getElementById('hero-attack').innerText = '⚔️ '
+  document.getElementById('hero-gold').innerText = '🪙 ' + player.gold
+  document.getElementById('hero-potions').innerText = '🧪 ' + player.potions
+  document.getElementById('hero-attack').innerText = '⚔️ ' + player.attackPower
 }
 
 function drawCurrentEnemy() {
   //  STUB
+  document.getElementById("enemy-type").innerText = currentEnemy.type
+  document.getElementById("enemy-health").innerText = currentEnemy.health 
 }
 
 function enemyTurn() {
