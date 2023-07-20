@@ -6,6 +6,10 @@ let stage2Screen = document.getElementById('stage-2-screen')
 let stage3Screen = document.getElementById('stage-3-screen')
 let victoryScreen = document.getElementById("victory-screen")
 let gamOverScreen = document.getElementById("game-over-screen")
+let stage2Screen = document.getElementById("stage-2-screen")
+let stage3Screen = document.getElementById("stage-3-screen")
+let victoryScreen = document.getElementById("victory-screen");
+let gameOverScreen = document.getElementById("game-over-screen")
 
 function hideActiveScreen() {
   document.querySelector('.screen.show')?.classList.remove('show')
@@ -27,9 +31,13 @@ function showMap() {
 function showStage1() {
   hideActiveScreen()
   stage1Screen.classList.add("show")
+  hideActiveScreen()
+  stage1Screen.classList.add("show")
 }
 
 function showStage2() {
+  hideActiveScreen()
+  stage2Screen.classList.add("show")
   hideActiveScreen()
   stage2Screen.classList.add("show")
 }
@@ -37,9 +45,13 @@ function showStage2() {
 function showStage3() {
   hideActiveScreen()
   stage3Screen.classList.add("show")
+  hideActiveScreen()
+  stage3Screen.classList.add("show")
 }
 
 function showVictory() {
+  hideActiveScreen()
+  victoryScreen.classList.add("show")
   hideActiveScreen()
   victoryScreen.classList.add("show")
 }
